@@ -1,0 +1,1122 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Groovinads panel">
+		<meta name="theme-color" content="#1797be">
+		<title>Groovinads Panel</title>
+		<script src="/socket.io/socket.io.js"></script>
+
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/normalize-css/normalize.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/jquery-ui-1.12.1/jquery-ui.min.css?27">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/fontawesome-pro/css/all.min.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/simple-line-icons/css/simple-line-icons.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/animate.css/animate.min.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/whirl/dist/whirl.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/select2/dist/css/select2.min.css?27" id="select2.min.css" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/select2-bootstrap-theme/dist/select2-bootstrap.min.css?27" id="select2-bootstrap.min.css" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/pnotify/dist/pnotify.custom.min.css?27" id="pnotify.custom.min.css" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/magnific-popup/1.1.0/magnific-popup.min.css?27" id="magnific-popup.min.css" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/bootstrap-tour/build/css/bootstrap-tour.css?27">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-flash-1.5.1/b-html5-1.5.1/b-print-1.5.1/cr-1.4.1/fc-3.2.4/fh-3.1.3/kt-2.3.2/r-2.2.1/rg-1.0.2/rr-1.2.3/sc-1.4.4/sl-1.2.5/datatables.min.css" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/bootstrap-table/dist/bootstrap-table.min.css?27" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css?27" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/spectrum/spectrum.css?27">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+		<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/css/bootstrap.css" id="bootstrap.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css?27" id="bootstrap-tagsinput.css">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/bootstrap-select/dist/css/bootstrap-select.min.css?27" id="bootstrap-select.css">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/vendor/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css?27" id="bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/css/main.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/css/app.css?27">
+		<link rel="stylesheet" href="https://panel.groovinads.com/global/css/theme.css?27">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+			<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- LINKS SUMADOS -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<style type="text/css">
+			body {font-family: ubuntu,source sans pro,sans-serif;}
+			span.spanBold{color: #00004b; font-weight: 700;}
+			span.spanBoldRed{color: red; font-weight: 700;}
+			.imgTutorial{width: 100%; padding:  5px 0px 10px 0px}
+			.fa-exclamation-triangle{color: orange;}
+			.tagnamecolor, .cssselectorcolor{color: brown;}
+			.tagcolor{color: blue;}
+			.attributecolor, .csspropertycolor{color: red;}
+			.attributevaluecolor, .csspropertyvaluecolor, .jskeywordcolor{color: blue;}
+			code, .cssdelimitercolor, .tagcontent{color: black;}
+			.comment{color: #3bab2e;}
+			.icons{width: 20px; height: 20px; margin: 5px;}
+			code{
+				display: block;
+				margin-top: -25px;
+				background-color: #f1f1f1;
+			}
+			img.imgTutorial.smallImg {
+    			display: inline;
+    			max-width: 300px;
+			}
+			.imgText {
+			  color: black;
+			  padding: 8px 12px;
+			  position: absolute;
+			  bottom: 8px;
+			  width: 100%;
+			  text-align: center;
+			}
+			.buttonCopy{
+			  position: relative;
+			  left: 95%;
+			  top: -80px;
+			}
+		</style>
+	</head>
+
+
+	<body>
+		<section id="app_module" style="opacity: 1;">
+			<div class="content-wrapper sync sync-after">
+				<div class="content-heading">
+					<div class="mt-sm mb">
+						<i class="far fa-window-restore mr"></i>
+						Banners 
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="">
+						<div class="panel widget panel-shadow">
+							<div class="panel-body help-campaigns-item-main">
+
+								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default" title="Panel Banner > DCO">
+									    <div class="panel-heading" role="tab" id="bannersT01">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT01" aria-expanded="false" aria-controls="bannersCollapseT01">
+									          Panel Banner > DCO
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT01" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT01">
+									      	<div class="panel-body">
+									        	<p>El panel está pensado de tal forma de que sea intuitivo y fácil de comprender. A continuación vamos a ver que opciones tenemos disponibles desde él: </p>
+												<p>En el menú vamos a encontrar las siguientes opciones:</p>
+												<p>
+													<span class="spanBold">Edit Details:</span> Nos permite cambiar la información del banner.<br>
+													<span class="icons">&#128204;</span>Tutorial relacionado: <span class="spanBold"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT11" aria-expanded="false" aria-controls="bannersCollapseT11">¿Qué información necesitamos al crear un nuevo banner?</a></span> <br>
+													<span class="spanBold">Edit Desing:</span> Nos permite editar el diseño del banner. <br>
+													<span class="icons">&#128204;</span>Tutorial relacionado: <span class="spanBold"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT03" aria-expanded="false" aria-controls="bannersCollapseT03">¿Cómo configurar la estética de un banner?</a></span> <br>
+													<span class="spanBold">View Tag:</span> Esta opción se encuentra en desarrollo, por lo que aun no se encuentra disponible. <br>
+													<span class="spanBold">Filters:</span> Esta opción se encuentra en desarrollo, por lo que aun no se encuentra disponible.<br> 
+													<span class="spanBold">Audiences:</span> Esta opción se encuentra en desarrollo, por lo que aun no se encuentra disponible. <br>
+													<span class="spanBold">Duplicar:</span> Nos permite duplicar el banner.<br>
+													<span class="icons">&#128204;</span>Tutorial relacionado: <span class="spanBold"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT12" aria-expanded="false" aria-controls="bannersCollapseT12">¿Cómo duplicar un banner?</a></span> <br>
+													<span class="spanBold">Borrar:</span> Elimina el banner.
+												</p>
+									      	</div>
+									    </div>
+									 </div>
+									<div class="panel panel-default" title="¿Cómo crear un nuevo banner?">
+									    <div class="panel-heading" role="tab" id="bannersT02">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT02" aria-expanded="true" aria-controls="bannersCollapseT02">
+									          ¿Cómo crear un nuevo banner?
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT02" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT02">
+									      <div class="panel-body">
+											<ul class="nav nav-tabs">
+											  <li class="active"><a data-toggle="tab" href="#bannerT02P01" class="check-obligatorio">Paso 1</a></li>
+											  <li><a data-toggle="tab" href="#bannerT02P02" class="check-obligatorio">Paso 2</a></li>
+											  <li><a data-toggle="tab" href="#bannerT02P03" class="check-obligatorio">Paso 3</a></li>
+											  <li><a data-toggle="tab" href="#bannerT02P04" class="check-obligatorio">Paso 4</a></li>
+											</ul>
+
+											<div class="tab-content">
+											  <div id="bannerT02P01" class="tab-pane fade in active">
+											    <h3>Paso 1</h3>
+											    <p>Seleccionamos el menú <span class="spanBold">Banners > DCO</span> y presionamos el botón <span class="spanBold">New Banner</span>.</p>
+												<img class="imgTutorial" src="img/bannersTutorial-01.png">
+											  </div>
+											  <div id="bannerT02P02" class="tab-pane fade">
+											    <h3>Paso 2</h3>
+											    <p>Se abrirá una nueva ventana con un formulario que tendremos que completar con los datos requeridos. </p>
+												<p>Si bien se solicitan más datos, los obligatorios son: </p>
+												<ul>
+													<li>Nombre</li>
+													<li>Formato</li>
+													<li>Base de datos</li>
+													<li>Country</li>
+													<li>Red</li>
+													<li>Medio</li>
+												</ul>
+												<p>Para banners de ejemplos, recomendamos completarse en el campo Red <span class="spanBold">"Not Specified"</span> y en el correspondiente a Medio con "ejemplo". </p>
+												<p><span class="icons">&#128204;</span>Tutorial relacionado: <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT11" aria-expanded="false" aria-controls="bannersCollapseT11"><strong>¿Qué información necesitamos al crear un nuevo banner?</strong></p></a>
+												<p>Presionamos Siguiente para continuar.  </p>
+												<img class="imgTutorial" src="img/bannersTutorial-02.png">
+											  </div>
+											  <div id="bannerT02P03" class="tab-pane fade">
+											    <h3>Paso 3</h3>
+												<p>En esta instancia, nos vamos a centrar exclusivamente en el diseño del banner en su totalidad. Paleta de color, template, disposición de los elementos, acciones, etc. </p>
+												<img class="imgTutorial" src="img/bannersTutorial-03.png">
+											  </div>
+											  <div id="bannerT02P04" class="tab-pane fade">
+											    <h3>Paso 4</h3>
+												<p>Una vez realizados los cambios de diseños se guarda el templete, si es necesario, y se hace clic en Guardar.</p>
+												<p><span class="icons">&#128204;</span>Tutorial relacionado: 
+													<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT03" aria-expanded="false" aria-controls="bannersCollapseT03"><strong>¿Cómo configurar la estética de un banner?</strong></a>
+												</p>
+											  </div>
+											</div>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo configurar la estética de un banner? ">
+									    <div class="panel-heading" role="tab" id="bannersT03">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT03" aria-expanded="false" aria-controls="bannersCollapseT03">
+									          ¿Cómo configurar la estética de un banner? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT03" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT03">
+									      	<div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT03P01" class="check-obligatorio">Paso 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P02" class="check-obligatorio">Paso 2</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P03">Paso 3</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P04">Paso 4</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P05">Paso 5</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P06">Paso 6</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P07">Paso 7</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P08">Paso 8</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P09">Paso 9</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P10">Paso 10</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P11">Paso 11</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P12">Paso 12</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P13">Paso 13</a></li>
+												  <li><a data-toggle="tab" href="#bannerT03P14" class="check-obligatorio">Paso 14</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT03P01" class="tab-pane fade in active">
+												    <h3>Paso 1</h3>
+												    <p>Seleccionar la paleta deseada:</p>
+												    <img class="imgTutorial" src="img/bannersTutorial-04.png">
+												  </div>
+												  <div id="bannerT03P02" class="tab-pane fade">
+												    <h3>Paso 2</h3>
+												    <p>Crear un nuevo templete o sobrescribir uno ya existente desde el botón Templete: </p>
+													<img class="imgTutorial" src="img/bannersTutorial-05.png">
+												  </div>
+												  <div id="bannerT03P03" class="tab-pane fade">
+												    <h3>Paso 3</h3>
+												    <p>Seleccionar el logo desde la opción de <span class="spanBold">Logo</span> en <span class="spanBold">System settings</span> o cargar uno nuevo desde el botón <span class="spanBold">“Upload New Logo”</span></p>
+													<img class="imgTutorial" src="img/bannersTutorial-06.png">
+													<p><span class="icons">&#128204;</span>Tutorial relacionado: <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT07" aria-expanded="false" aria-controls="bannersCollapseT07"><strong>¿Cómo cargar un nuevo Logo?</strong></a></p> 
+												  </div>
+												  <div id="bannerT03P04" class="tab-pane fade">
+												    <h3>Paso 4</h3>
+												    <p>Puede cambiar, y luego guardar, cualquier combinación de colores y reutilizarla cuando la necesite en otros banners y plantillas.</p>
+													<span class="icons">&#128204;</span>Tutorial relacionado: <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT06" aria-expanded="false" aria-controls="bannersCollapseT06"><strong>¿Cómo crear y configurar una paleta de colores?</strong> </a>
+												  </div>
+												  <div id="bannerT03P05" class="tab-pane fade">
+												    <h3>Paso 5</h3>
+												    <p>Desde el menú <span class="spanBold">General Banner Settings</span> podemos elegir, de ser necesario, una imagen de fondo.</p> 
+													<p>Si la imagen ya fue cargada anteriormente la podemos seleccionar desde <span class="spanBold">General Banner Settings > Background Image</span>.</p>
+													<p>En el caso de que deseemos cargar un nuevo fondo lo podemos hacer desde el botón <span class="spanBold">“Upload New Background”</span>.</p>
+													<img class="imgTutorial" src="img/bannersTutorial-07.png">
+													<p><span class="icons">&#128204;</span>Tutorial relacionado: <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT08" aria-expanded="false" aria-controls="bannersCollapseT08"><strong>¿Cómo cargar una nueva imagen de fondo?</strong></a></p> 
+												  </div>
+												  <div id="bannerT03P06" class="tab-pane fade">
+												    <h3>Paso 6</h3>
+												    <p>Definimos la cantidad de columnas y de productos que deseamos tener en el banner desde la sección <span class="spanBold">Offers Layout</span>.</p> 
+													<img class="imgTutorial" src="img/bannersTutorial-08.png">
+												  </div>
+												  <div id="bannerT03P07" class="tab-pane fade">
+												    <h3>Paso 7</h3>
+												    <p>Desde <span class="spanBold">Banner: Header</span> vamos a poder activar y configurar los parámetros del header del banner.</p> 
+													<img class="imgTutorial" src="img/bannersTutorial-09.png">
+												  </div>
+												  <div id="bannerT03P08" class="tab-pane fade">
+												    <h3>Paso 8</h3>
+												    <p>En la sección <span class="spanBold">Banner: Logo</span> vamos a poder configurar algunos aspectos de nuestro logo tales como: alto, largo, márgenes y posición en relación con el Header.</p> 
+													<img class="imgTutorial" src="img/bannersTutorial-10.png">
+												  </div>
+												  <div id="bannerT03P09" class="tab-pane fade">
+												    <h3>Paso 9</h3>
+												    <p>Si deseamos que en nuestro banners se visualice la foto de nuestro productos, lo vamos a poder configurar desde <span class="spanBold">Banner: Image.</p>
+													<p>Al activar este espacio se va a desplegar la seccion donde va a poder configurar los parámetros de la imagen tales como  ancho y alto, borde, sombra, entre otros.</p>
+													<img class="imgTutorial" src="img/bannersTutorial-11.png">
+												  </div>
+												  <div id="bannerT03P10" class="tab-pane fade">
+												    <h3>Paso 10</h3>
+													<p>En <span class="spanBold">Banner: Title</span> vamos a encontrar todas las opciones para configurar el título de nuestros productos.  Algunas de las opciones son: tipografía, tamaño de la letra, alineación, texto personalizado, posición, entre otros.</p> 
+													<img class="imgTutorial" src="img/bannersTutorial-12.png">
+												  </div>
+												  <div id="bannerT03P11" class="tab-pane fade">
+												    <h3>Paso 11</h3>
+												    <p>El precio de nuestro artículo lo vamos a poder configurar desde <span class="spanBold">Banner: Price</span>.</p> 
+													<p>Tal como en la seccion de Title vamos a poder configurar la tipografía, el tamaño de la letra, la alineación, la posición, entre otros aspectos.</p>
+													<p>Dentro del campo <span class="spanBold">Price Custom Text</span> vamos a poder customizar si queremos que el precio se vea con coma, con punto o con cuantos decimales por medio de una macro.</p> 
+													<img class="imgTutorial" src="img/bannersTutorial-13.png">
+												  </div>
+												  <div id="bannerT03P12" class="tab-pane fade">
+												    <h3>Paso 12</h3>
+												    <p>Desde <span class="spanBold">Banner: Button</span> vamos a poder configurar nuestro botón.</p> 
+													<img class="imgTutorial" src="img/bannersTutorial-14.png">
+												  </div>
+												  <div id="bannerT03P13" class="tab-pane fade">
+												    <h3>Paso 13</h3>
+												    <p>En la sección <span class="spanBold">Advanced settings</span> vamos a encontrar un espacio para customizar el banner con HTML, CSS, Flash y JavaScript. Esta opción solo la recomendamos en caso de que se tengan sólidos conocimientos en código, ya que al utilizar esta sección se puede romper la visualización del banner o creatividad.</p> 
+												  </div>
+												  <div id="bannerT03P14" class="tab-pane fade">
+												    <h3>Paso 14</h3>
+												    <p>Una vez concluidos todos los cambios recordar guardar los cambios en el templete y en el banners.</p>
+												  </div>
+									    		</div>
+									    	</div>
+									  	</div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo crear un nuevo templete o plantilla?">
+									    <div class="panel-heading" role="tab" id="bannersT04">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT04" aria-expanded="true" aria-controls="bannersCollapseT04">
+									          ¿Cómo crear un nuevo templete o plantilla?
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT04" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT04">
+									      <div class="panel-body">
+												<p>Para crear un nuevo templete o plantilla en necesario ingresar desde el menu <span class="spanBold">Banners > DCO</span> a la edición de alguno de los banners que tengamos creados en nuestra cuenta. </p>
+									        	<img class="imgTutorial" src="img/bannersTutorial-15.png">
+												<p>Desde <span class="spanBold">New Templete</span> vamos a poder crear un nuevo templete. </p>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo guardar un templete o plantilla?">
+									    <div class="panel-heading" role="tab" id="bannersT05">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT05" aria-expanded="true" aria-controls="bannersCollapseT05">
+									          ¿Cómo guardar un templete o plantilla? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT05" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT05">
+									      <div class="panel-body">
+												<p>Si es la primera vez que vamos a guardar los cambios en un templete que recién creamos, vamos a utilizar la opción <span class="spanBold">Overwrite Templete</span>. Esta, nos va a permitir sobreescribir un templete ya creado.</p> 
+												<p>En el caso de que estemos modificando un banner en que ya hayamos adjudicado la plantilla correcta, vamos a poder guardar los cambios en ella desde la opción <span class="spanBold">Save</span>.</p>
+												<img class="imgTutorial" src="img/bannersT05Img01.png">
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo crear y configurar una paleta de colores?">
+									    <div class="panel-heading" role="tab" id="bannersT06">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT06" aria-expanded="true" aria-controls="bannersCollapseT06">
+									          ¿Cómo crear y configurar una paleta de colores? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT06" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT06">
+									      <div class="panel-body">
+												<p>Para configurar o modificar una paleta de colores en necesario ingresar desde el menu <span class="spanBold">Banners > DCO</span> a la edición de alguno de los banners que tengamos creados en nuestra cuenta.</p>
+												<p>Desde las secciones <span class="spanBold">Sections Colors, Offer Information, Colors Button Colors y Highlights Colors</span> se va a poder seleccionar los colores a mostrar en la creatividad.</p>
+												<img class="imgTutorial" src="img/bannersT06Img01.png">
+												<p><span class="icons">&#128064;</span><span class="spanBold">Atención:</span> Para los que los valores seleccionados en Highlights Colors se vean correctamente es necesario tener activa la opción resalte desde Offer: Highlights.</p>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo cargar un nuevo Logo?">
+									    <div class="panel-heading" role="tab" id="bannersT07">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT07" aria-expanded="true" aria-controls="bannersCollapseT07">
+									          ¿Cómo cargar un nuevo Logo?
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT07" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT07">
+									      <div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT07P01">Intro</a></li>
+												  <li><a data-toggle="tab" href="#bannerT07P02" class="check-obligatorio">Opción 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT07P03" class="check-obligatorio">Opción 2.1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT07P04" class="check-obligatorio">Opción 2.2</a></li>
+												  <li><a data-toggle="tab" href="#bannerT07P05" class="check-obligatorio">Opción 2.3</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT07P01" class="tab-pane fade in active">
+												    <h3>Intro</h3>
+												    <p>Para subir un nuevo logo tenemos dos opciones.  </p>
+												    <p><span class="spanBold">Opción 1:</span> Nos permite realizar la carga del nuevo logo desde la edición del banner.</p>
+												    <p><span class="spanBold">Opción 2:</span> Nos permite realizar la carga del nuevo logo desde el panel sin ingresar a la edición de ningún banner.</p>
+												  </div>
+												  <div id="bannerT07P02" class="tab-pane fade">
+												    <h3>Opción 1</h3>
+												    <p>Desde el menú <span class="spanBold">Banners > DCO</span> dentro de la edición del banner haciendo clic el botón <span class="spanBold">“Upload New Logo”</span></p>
+												    <img class="imgTutorial" src="img/bannersT07Img01.png">
+												  </div>
+												  <div id="bannerT07P03" class="tab-pane fade">
+												    <h3>Opción 2 - Paso 1</h3>
+												    <p>Desde el menú <span class="spanBold">Banners > Gestor de Imágenes</span> hacer clic en la opción <span class="spanBold">“Upload Images”</span>.</p>
+												    <p>Se abrirá una ventana donde podrá seleccionar uno o más logos que tenga guardados en su dispositivo. </p>
+												    <p>Una vez que haya seleccionado los archivos correspondientes, hacer clic en el botón <span class="spanBold">“Abrir”</span>.</p>
+												    <img class="imgTutorial" src="img/bannersT07Img02.png">
+												  </div>
+												  <div id="bannerT07P04" class="tab-pane fade">
+												    <h3>Opción 2 - Paso 2</h3>
+												    <p>En la nueva venta va a poder colocarle un nombre a el o los logos. </p>
+													<p>Es muy importante que en la sección <span class="spanBold">Tags</span> seleccione la opción <span class="spanBold">Logos</span>, de caso contrario el archivo no se va a ver disponible en la opción desplegable dentro de la edición del banner.</p> 
+													<img class="imgTutorial" src="img/bannersT07Img03.png">
+												  </div>
+												  <div id="bannerT07P05" class="tab-pane fade">
+												    <h3>Opción 2 - Paso 3</h3>
+												    <p>Luego hacer clic en el botón Guardar y listo! </p>
+													<img class="imgTutorial" src="img/bannersT07Img04.png">
+												  </div>
+												</div>
+									      	</div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo cargar una nueva imagen de fondo?">
+									    <div class="panel-heading" role="tab" id="bannersT08">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT08" aria-expanded="true" aria-controls="bannersCollapseT08">
+									          ¿Cómo cargar una nueva imagen de fondo?
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT08" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT08">
+									      <div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT08P01">Intro</a></li>
+												  <li><a data-toggle="tab" href="#bannerT08P02" class="check-obligatorio">Opción 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT08P03" class="check-obligatorio">Opción 2.1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT08P04" class="check-obligatorio">Opción 2.2</a></li>
+												  <li><a data-toggle="tab" href="#bannerT08P05" class="check-obligatorio">Opción 2.3</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT08P01" class="tab-pane fade in active">
+												    <h3>Intro</h3>
+												    <p>Para subir una nueva imagen de fondo vamos a tener dos opciones.</p>
+												    <p><span class="spanBold">Opción 1:</span> Nos permite realizar la carga de la imagen desde la edición del banner.</p>
+												    <p><span class="spanBold">Opción 2:</span> Nos permite realizar la carga de la imagen desde el panel sin ingresar a la edición de ningún banner.</p>
+												  </div>
+												  <div id="bannerT08P02" class="tab-pane fade">
+												    <h3>Opción 1</h3>
+												    <p>Desde el menú <span class="spanBold">Banners > DCO</span> dentro de la edición del banner haciendo clic el botón <span class="spanBold">“Upload New Logo”</span></p>
+												    <img class="imgTutorial" src="img/bannersT08Img01.png">
+												  </div>
+												  <div id="bannerT08P03" class="tab-pane fade">
+												    <h3>Opción 2 - Paso 1</h3>
+												    <p>Desde el menú <span class="spanBold">Banners > Gestor de Imágenes</span> hacer clic en la opción <span class="spanBold">“Upload Images”</span>.</p>
+												    <p>Se abrirá una ventana donde podrá seleccionar una o más imagenes de fondo que tenga guardados en su dispositivo. </p>
+												    <p>Una vez que haya seleccionado los archivos correspondientes, hacer clic en el botón <span class="spanBold">“Abrir”</span>.</p>
+												    <img class="imgTutorial" src="img/bannersT08Img02.png">
+												  </div>
+												  <div id="bannerT08P04" class="tab-pane fade">
+												    <h3>Opción 2 - Paso 2</h3>
+												    <p>En la nueva venta va a poder colocarle un nombre a la o las imágenes de fondo. </p>
+													<p>Es muy importante que en la sección <span class="spanBold">Tags</span> seleccione la opción <span class="spanBold">Background</span>, de caso contrario el archivo no se va a ver disponible en la opción desplegable dentro de la edición del banner.</p> 
+													<img class="imgTutorial" src="img/bannersT08Img03.png">
+												  </div>
+												  <div id="bannerT08P05" class="tab-pane fade">
+												    <h3>Opción 2 - Paso 3</h3>
+												    <p>Luego hacer clic en el botón Guardar y listo! </p>
+													<img class="imgTutorial" src="img/bannersT08Img04.png">
+												  </div>
+												</div>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cuáles son las posibles posiciones del header?">
+									    <div class="panel-heading" role="tab" id="bannersT09">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT09" aria-expanded="true" aria-controls="bannersCollapseT09">
+									          ¿Cuáles son las posibles posiciones del header? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT09" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT09">
+									      <div class="panel-body">
+												<p>El panel nos da la posibilidad de elegir la posición de nuestro header. </p>
+												<p>Las posibilidades son:</p>
+												<ul>
+													<li><span class="spanBold">Top:</span> </li>
+													<li><span class="spanBold">Bottom:</span> </li>
+													<li><span class="spanBold">Left:</span> </li>
+													<li><span class="spanBold">Right:</span> </li>
+													<li><span class="spanBold">Inline:</span> </li>
+													<li><span class="spanBold">Float-Top:</span> </li>
+													<li><span class="spanBold">Float-Bottom:</span> </li>
+												</ul>
+												<img class="imgTutorial" src="img/bannersT09Img01.png">
+												<p><span class="icons">&#128064;</span><span class="spanBold">Atención:</span> Tener en cuenta que si usamos Float-Top o Float-Bottom el header va a estar fondo por encima de todos los elementos que configuremos en el banner. Esto quiere decir que si tengo configurada una URL en la cabecera al hacer clic sobre el producto, la página que se abrirá va a ser la de la cabecera.</p>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo incluir un video en un banner?">
+									    <div class="panel-heading" role="tab" id="bannersT10">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT10" aria-expanded="true" aria-controls="bannersCollapseT10">
+									          ¿Cómo incluir un video en un banner?
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT10">
+									      <div class="panel-body">
+											<ul class="nav nav-tabs">
+											  <li class="active"><a data-toggle="tab" href="#bannerT10P01">Intro</a></li>
+											  <li><a data-toggle="tab" href="#bannerT10P02" class="check-obligatorio">Paso 1</a></li>
+											  <li><a data-toggle="tab" href="#bannerT10P03">Opción 1</a></li>
+											  <li><a data-toggle="tab" href="#bannerT10P04">Opción 2</a></li>
+											</ul>
+
+											<div class="tab-content">
+											  <div id="bannerT10P01" class="tab-pane fade in active">
+											    <h3>Intro</h3>
+											    <p>Dentro de las opciones predeterminadas del panel no hay una opción específica que nos permita agregar un video. Pero esto no significa que no se pueda configurar. </p>
+												<p>Desde GroovinAds recomendamos que los siguientes pasaros sean realizados por personas que tienen conocimientos básicos en HTML, CSS y JavaScript. </p>
+												<p><span class="icons">&#128073;</span>Banner de ejemplo: <a href="https://presentations.groovinads.com/72/3263">https://presentations.groovinads.com/72/3263</a></p>
+												<p>Recomendaciones: </p>
+												<p>
+													<span class="spanBold">Duración:</span> Si bien se puede utilizar videos de hasta 15 segundo, por cuestiones de optimización y performance recomendamos que no superen los 10 segundos. <br>
+													<span class="spanBold">Peso:</span> Hasta 3 megas. <br>
+													<span class="spanBold">Resolución y relaciones de aspecto:</span> Para la relación de aspecto predeterminada de 16:9, recomendamos la opción 360 píxeles: 640 x 360 para banners de 300x250.<br>
+													<span class="icons">&#128269;</span>Página relacionada: <a href="https://support.google.com/youtube/answer/6375112?hl=es-419&co=GENIE.Platform%3DDesktop">https://support.google.com/youtube/answer/6375112?hl=es-419&co=GENIE.Platform%3DDesktop</a> <br>
+													<span class="spanBold">Almacenamiento:</span> El video debe ser accesible desde una URL segura (htpps). 
+												</p>
+											  </div>
+											  <div id="bannerT10P02" class="tab-pane fade">
+											    <h3>Paso 1</h3>
+											    <p>Al comenzar a configurar el video dentro del banner  debemos tener en cuenta, cuál es el comportamiento que deseamos que este tenga. Si bien se nos puede ocurrir miles de opciones, en este tutorial vamos a estar abordando las siguientes opciones:</p>
+												<p><span class="spanBold">Opción 1:</span> Armado de un banner donde solo se puede visualizar el logo de la marca con el video. Primer ejemplo en la presentación. </p>
+												<p><span class="spanBold">Opción 2:</span> Armado de un banner donde se visualiza el video y luego este desaparece dándole espacio a una imagen u oferta. Segundo y tercer ejemplo de la presentación. </p>
+												<p><span class="icons">&#128064;</span><span class="spanBold">Atención:</span> Tener en cuenta que cada opción con su correspondiente código está planteada para banners de 300x250. En caso de querer armar un banner de otras dimensiones, es necesario ajustar el código CSS. </p>
+
+											  </div>
+											  <div id="destino" contentEditable="true"></div>
+											  <div id="bannerT10P03" class="tab-pane fade">
+											    <h3>Opción 1</h3>
+											    <ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT10P03-1" class="check-obligatorio">Paso 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT10P03-2" class="check-obligatorio">Paso 2</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT10P03-1" class="tab-pane fade in active">
+												    <h3>Paso 1</h3>
+												    <p>Dentro de la configuración del banner vamos a activar la opción <span class="spanBold">Header > Show Header Text</span>. Al habilitarle este espacio vamos a colocar el siguiente código en el campo <span class="spanBold">Header Text Custom Text</span>.</p> 
+													<p>Código: </p>
+													<button class="buttonCopy" onclick="copiarAlPortapapeles('codeO1P1')" value="Copiar codigo">&#128209;</button>
+													<code class="tagnamecolor" id="codeO1P1">
+														<span class="tagcolor"><</span>video <span class="attributecolor">autoplay muted playsinline id</span><span class="attributevaluecolor">="groovinads_video"</span><span class="tagcolor">></span><br>
+														&nbsp;&nbsp;<span class="tagcolor"><</span>source <span class="attributecolor">src</span><span class="attributevaluecolor">="URL DEL VIDEO"</span>  <span class="attributecolor">type</span><span class="attributevaluecolor">="video/mp4;"</span> /<span class="tagcolor">></span><br>
+														<span class="tagcolor"><</span>/video<span class="tagcolor">></span> <br>
+													</code><br>
+													<p>Como se va a ver en el panel: </p>
+													<img class="imgTutorial" src="img/bannersT10P031Img01.png">
+												  </div>
+												  <div id="bannerT10P03-2" class="tab-pane fade">
+												    <h3>Paso 2</h3>
+												    <p>Luego nos vamos a dirigir a <span class="spanBold">Advanced settings > Special Options</span> donde vamos a colocar el siguiente código en el campo <span class="spanBold">Custom CSS</span>: </p>
+												    <button class="buttonCopy" onclick="copiarAlPortapapeles('codeO1P2')" value="Copiar codigo">&#128209;</button>
+												    <code class="cssselectorcolor" id="codeO1P2">
+														video <span class="cssdelimitercolor">{</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">position</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">absolute</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">top</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">81px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">left</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">0px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">z-index</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">99999</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">width</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">300px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">height</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">169px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">cursor</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">pointer</span><span class="cssdelimitercolor">;</span><br>
+														<span class="cssdelimitercolor">}</span><br>
+												    </code>
+
+												  </div>
+												</div>
+											  </div>
+											  <div id="bannerT10P04" class="tab-pane fade">
+											    <h3>Opción 2</h3>
+											    <ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT10P04-1" class="check-obligatorio">Paso 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT10P04-2" class="check-obligatorio">Paso 2</a></li>
+												  <li><a data-toggle="tab" href="#bannerT10P04-3" class="check-obligatorio">Paso 3</a></li>
+												  <li><a data-toggle="tab" href="#bannerT10P04-4" class="check-obligatorio">Paso 4</a></li>
+												  <li><a data-toggle="tab" href="#bannerT10P04-5" class="check-obligatorio">Paso 5</a></li>
+												  <li><a data-toggle="tab" href="#bannerT10P04-6" class="check-obligatorio">Paso 6</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT10P04-1" class="tab-pane fade in active">
+												    <h3>Paso 1</h3>
+												    <p>Desde <span class="spanBold">General Banner Settings > Background Image</span> vamos a seleccionar el fondo que vamos a utilizar en la creatividad.</p>
+												    <img class="imgTutorial" src="img/bannersT10P042Img01.png">
+												  </div>
+												  <div id="bannerT10P04-2" class="tab-pane fade">
+												    <h3>Paso 2</h3>
+												    <p>Dentro de la configuración del banner vamos a activar la opción <span class="spanBold">Header > Show Header Text</span>. Al habilitarle este espacio vamos a colocar el siguiente código en el campo <span class="spanBold">Header Text Custom Text</span>. </p>
+													<p>Código: </p>
+													<button class="buttonCopy" onclick="copiarAlPortapapeles('codeO2P2')" value="Copiar codigo">&#128209;</button>
+													<code class="tagnamecolor" id="codeO2P2">
+														<span class="tagcolor"><</span>div <span class="attributecolor">class</span><span class="attributevaluecolor">="mute-video"</span><span class="tagcolor">></span><span class="tagcontent">toggle</span><span class="tagcolor"><</span>/div<span class="tagcolor">></span><br>
+														<span class="tagcolor"><</span>video <span class="attributecolor">autoplay muted playsinline id</span><span class="attributevaluecolor">="groovinads_video"</span><span class="tagcolor">></span><br>
+														&nbsp;&nbsp;<span class="tagcolor"><</span>source <span class="attributecolor">src</span><span class="attributevaluecolor">="URL DEL VIDEO"</span>  <span class="attributecolor">type</span><span class="attributevaluecolor">="video/mp4;"</span> /<span class="tagcolor">></span><br>
+														<span class="tagcolor"><</span>/video<span class="tagcolor">></span> <br>
+													</code><br>
+													<p>Como se va a ver en el panel: </p>
+													<img class="imgTutorial" src="img/bannersT10P042Img02.png">
+												  </div>
+												  <div id="bannerT10P04-3" class="tab-pane fade">
+												    <h3>Paso 3</h3>
+												    <p>Desde <span class="spanBold">Advanced settings > General Banner Settings</span> vamos a activar la opción <span class="spanBold">JS Animations.</span></p>
+												    <img class="imgTutorial" src="img/bannersT10P043Img01.png">
+												  </div>
+												  <div id="bannerT10P04-4" class="tab-pane fade">
+												    <h3>Paso 4</h3>
+												    <p>Luego nos vamos a dirigir a <span class="spanBold">Advanced settings > Special Options</span> donde vamos a colocar el siguiente código en el campo <span class="spanBold">Custom CSS:</span> </p>
+												    <button class="buttonCopy" onclick="copiarAlPortapapeles('codeO2P4')" value="Copiar codigo">&#128209;</button>
+												    <code class="cssselectorcolor" id="codeO2P4">
+														video <span class="cssdelimitercolor">{</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">position</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">absolute</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">top</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">41px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">left</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">0px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">z-index</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">99999</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">width</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">300px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">height</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">169px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">cursor</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">pointer</span><span class="cssdelimitercolor">;</span><br>
+														<span class="cssdelimitercolor">}</span><br>
+														.mute-video <span class="cssdelimitercolor">{</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">position</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">absolute</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">z-index</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">999999</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">right</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">10px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">bottom</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">10px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">background</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">url(https://static.groovinads.com/selfservice/2434/muteblanco.png) no-repeat center</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">background-size</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">16px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">border</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">0</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">width</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">16px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">height</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">16px</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">text-indent</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">-999px</span><span class="cssdelimitercolor">;</span><br>
+														<span class="cssdelimitercolor">}</span><br>
+														.unmute-video <span class="cssdelimitercolor">{</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">background</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">url(https://static.groovinads.com/selfservice/2434/unmuteblanco.png) no-repeat center</span><span class="cssdelimitercolor">;</span><br>
+														&nbsp;&nbsp;<span class="csspropertycolor">background-size</span><span class="cssdelimitercolor">:</span> <span class="csspropertyvaluecolor">16px</span><span class="cssdelimitercolor">;</span><br>
+														<span class="cssdelimitercolor">}</span><br>
+													</code>
+												  </div>
+												  <div id="bannerT10P04-5" class="tab-pane fade">
+												    <h3>Paso 5</h3>
+												    <p>A continuation vamos a colocar el siguiente código en el campo <span class="spanBold">Javascript Init:</span></p>
+												    <button class="buttonCopy" onclick="copiarAlPortapapeles('codeO2P5')" value="Copiar codigo">&#128209;</button>
+												    <code id="codeO2P5">
+												    	$("#groovinads_video")
+														.prop('muted', <span class="jskeywordcolor">true</span>) <br>
+														.bind("ended", <span class="jskeywordcolor">function</span>() { <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">var</span> placa = $("#video_bg").attr('src'); <br>
+														  &nbsp;&nbsp;$(".mute-video").hide() <br>
+														  &nbsp;&nbsp;$("#groovinads_video").hide() <br>
+														  &nbsp;&nbsp;$("#video_bg").show() <br>
+														  &nbsp;&nbsp;<span class="comment">//$("#video_bg").attr('src', placa);</span><br>
+														}) <br>
+														.each(<span class="jskeywordcolor">function</span>(){ <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> ($(<span class="jskeywordcolor">this</span>).is(":in-viewport")) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$(<span class="jskeywordcolor">this</span>)[0].play(); <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;console.log('play') <br>
+														  &nbsp;&nbsp;} <span class="jskeywordcolor">else</span> { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$(<span class="jskeywordcolor">this</span>)[0].pause(); <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;console.log('pause') <br>
+														  &nbsp;&nbsp;} <br>
+														}) <br>
+
+														$(".mute-video").click(<span class="jskeywordcolor">function</span> (e) { <br>
+														  &nbsp;&nbsp;e.stopPropagation(); <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> ($("#groovinads_video").prop('muted')) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$("#groovinads_video").prop('muted', <span class="jskeywordcolor">false</span>); <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$(<span class="jskeywordcolor">this</span>).addClass('unmute-video'); <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;console.log('unmute') <br>
+														  &nbsp;&nbsp;} <span class="jskeywordcolor">else</span> { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$("#groovinads_video").prop('muted', <span class="jskeywordcolor">true</span>); <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$(<span class="jskeywordcolor">this</span>).removeClass('unmute-video'); <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;console.log('mute') <br>
+														  &nbsp;&nbsp;} <br>
+														}); <br>
+												    </code>
+												  </div>
+												  <div id="bannerT10P04-6" class="tab-pane fade">
+												    <h3>Paso 6</h3>
+												    <p>Finalizando la configuracion vamos a colocar el siguiente código en el campo <span class="spanBold">Javascript functions:</span> </p>
+												    <button class="buttonCopy" onclick="copiarAlPortapapeles('codeO2P6')" value="Copiar codigo">&#128209;</button>
+												  	<code id="codeO2P6">
+														<span class="comment">/* ** @author  Mudit Ameta * @license https://github.com/zeusdeux/isInViewport/blob/master/license.md MIT */</span><br>
+														<span class="comment">// expose isInViewport as a custom pseudo-selector</span><br>
+														$.extend($.expr.pseudos || $.expr[':'], { <br>
+														  &nbsp;&nbsp;<span class="comment">// if $.expr.createPseudo is available, use it</span><br>
+														  &nbsp;&nbsp;'in-viewport': $.expr.createPseudo <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;? $.expr.createPseudo(argsString => currElement => isInViewport(currElement, getSelectorArgs(argsString))) <br>
+														  &nbsp;&nbsp;: (currObj, index, meta) => isInViewport(currObj, getSelectorArgs(meta[3])) <br>
+														}) <br>
+														 
+														<br><span class="comment">// expose isInViewport as a function too <br>
+														// this lets folks pass around actual objects as options (like custom viewport) <br>
+														// and doesn't tie 'em down to strings. It also prevents isInViewport from <br>
+														// having to look up and wrap the dom element corresponding to the viewport selector</span><br>
+														$.fn.isInViewport = <span class="jskeywordcolor">function</span>(options) { <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">return</span> <span class="jskeywordcolor">this</span>.filter((i, el) => isInViewport(el, options)) <br>
+														} <br>
+														 
+														$.fn.run = run <br>
+														 
+														<br><span class="comment">// lets you chain any arbitrary function or an array of functions and returns a jquery object</span><br>
+														<span class="jskeywordcolor">function</span> run(args) { <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> (arguments.length === 1 && typeof args === '<span class="jskeywordcolor">function</span>') { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;args = [args] <br>
+														  &nbsp;&nbsp;} <br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> (!(args instanceof Array)) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;throw <span class="jskeywordcolor">new</span> SyntaxError(<span class="jstext">'isInViewport: Argument(s) passed to .do/.run should be a function or an array of functions'</span>) <br>
+														  &nbsp;&nbsp;} <br>
+														 
+														  &nbsp;&nbsp;args.forEach(arg => { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="jskeywordcolor">if</span> (typeof arg !== '<span class="jskeywordcolor">function</span>') { <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.warn(<span class="jstext">'isInViewport: Argument(s) passed to .do/.run should be a function or an array of function>s'</span>) <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.warn(<span class="jstext">'isInViewport: Ignoring non-function values in array and moving on'</span>) <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;} <span class="jskeywordcolor">else</span> { <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[].slice.call(<span class="jskeywordcolor">this</span>).forEach(t => arg.call($(t))) <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+														  &nbsp;&nbsp;}) <br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">return</span> <span class="jskeywordcolor">this</span> <br>
+														} <br>
+														 
+														<br><span class="comment">// gets the width of the scrollbar</span><br>
+														<span class="jskeywordcolor">function</span> getScrollbarWidth(viewport) { <br>
+														  &nbsp;&nbsp;<br><span class="comment">// append a div that has 100% width to get true width of viewport</span><br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">const</span> el = $('<span class="csspropertyvaluecolor"><</span>div<span class="csspropertyvaluecolor">></span><span class="csspropertyvaluecolor"><</span>/div<span class="csspropertyvaluecolor">></span>').css({ <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;width: '100%' <br>
+														  &nbsp;&nbsp;}) <br>
+														  &nbsp;&nbsp;viewport.append(el) <br>
+														 
+														  &nbsp;&nbsp;<span class="comment">// subtract true width from the viewport width which is inclusive <br>
+														  &nbsp;&nbsp;// of scrollbar by default</span><br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">const</span> scrollBarWidth = viewport.width() - el.width() <br>
+														 
+														  &nbsp;&nbsp;<span class="comment">// remove our element from DOM</span><br>
+														  &nbsp;&nbsp;el.remove() <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">return</span> scrollBarWidth <br>
+														} <br>
+														 
+														<br><span class="comment">// returns true if DOM element `element` is in viewport</span><br>
+														<span class="jskeywordcolor">function</span> isInViewport(element, options) { <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">let</span> {top, bottom, left, right} = element.getBoundingClientRect() <br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">let</span> settings = $.extend({ <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;tolerance: 0, <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;viewport: window <br>
+														  &nbsp;&nbsp;}, options) <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">let</span> isVisibleFlag = <span class="jskeywordcolor">false</span> <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">let</span> $viewport = settings.viewport.jquery ? settings.viewport : $(settings.viewport) <br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> (!$viewport.length) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;console.warn(<span class="jstext">'isInViewport: The viewport selector you have provided matches no element on page.'</span>) <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;console.warn(<span class="jstext">'isInViewport: Defaulting to viewport as window'</span>) <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$viewport = $(window) <br>
+														  &nbsp;&nbsp;} <br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">const</span> $viewportHeight = $viewport.height() <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">let</span> $viewportWidth = $viewport.width() <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">const</span> typeofViewport = $viewport[0].toString() <br>
+														 
+														  &nbsp;&nbsp;<span class="comment">// if the viewport is other than window recalculate the top, <br>
+														  &nbsp;&nbsp;// bottom,left and right wrt the new viewport <br>
+														  &nbsp;&nbsp;// the [object DOMWindow] check is for window object type in PhantomJS</span><br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span>
+														   &nbsp;&nbsp;&nbsp;&nbsp;($viewport[0] !== window && typeofViewport !== '[object Window]' && typeofViewport !== '[object DOMWindow]') { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// use getBoundingClientRect() instead of $.Offset() <br>
+														    // since the original top/bottom positions are calculated relative to browser viewport and not document</span><br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="jskeywordcolor">const</span> viewportRect = $viewport[0].getBoundingClientRect() <br>
+														 
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// recalculate these relative to viewport</span><br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;top = top - viewportRect.top <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;bottom = bottom - viewportRect.top <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;left = left - viewportRect.left <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;right = right - viewportRect.left <br>
+														 
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// get the scrollbar width from cache or calculate it</span><br>
+														    isInViewport.scrollBarWidth = isInViewport.scrollBarWidth || getScrollbarWidth($viewport) <br>
+														 
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// remove the width of the scrollbar from the viewport width</span><br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;$viewportWidth -= isInViewport.scrollBarWidth <br>
+														  &nbsp;&nbsp;} <br>
+														 
+														  &nbsp;&nbsp;<span class="comment">// handle falsy, non-number and non-integer tolerance value <br>
+														  &nbsp;&nbsp;// same as checking using isNaN and then setting to 0 <br>
+														  &nbsp;&nbsp;// bitwise operators deserve some love too you know</span><br>
+														  &nbsp;&nbsp;settings.tolerance = ~~Math.round(parseFloat(settings.tolerance)) <br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> (settings.tolerance < 0) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;settings.tolerance = $viewportHeight + settings.tolerance // viewport height - tol <br>
+														  &nbsp;&nbsp;} <br>
+														 
+														  &nbsp;&nbsp;<span class="comment">// the element is NOT in viewport iff it is completely out of <br>
+														  &nbsp;&nbsp;// viewport laterally or if it is completely out of the tolerance <br>
+														  &nbsp;&nbsp;// region. Therefore, if it is partially in view then it is considered <br>
+														  &nbsp;&nbsp;// to be in the viewport and hence true is returned. Because we have adjusted <br>
+														  &nbsp;&nbsp;// the left/right positions relative to the viewport, we should check the <br>
+														  &nbsp;&nbsp;// element's right against the viewport's 0 (left side), and the element's <br>
+														  &nbsp;&nbsp;// left against the viewport's width to see if it is outside of the viewport.</span><br>
+														 
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> (right <= 0 || left >= $viewportWidth) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="jskeywordcolor">return</span> isVisibleFlag <br>
+														  &nbsp;&nbsp;} <br>
+														 
+														&nbsp;&nbsp;<span class="comment">// if the element is bound to some tolerance</span><br>
+														&nbsp;&nbsp;isVisibleFlag = settings.tolerance ? top <= settings.tolerance && bottom >= settings.tolerance : bottom > 0 && top <= $viewportHeight <br>
+														&nbsp;&nbsp;<span class="jskeywordcolor">return</span> isVisibleFlag <br>
+														&nbsp;&nbsp;} <br>
+														 
+														<br><span class="comment">// get the selector args from the args string proved by Sizzle</span><br>
+														<span class="jskeywordcolor">function</span> getSelectorArgs(argsString) { <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">if</span> (argsString) { <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="jskeywordcolor">const</span> args = argsString.split(',') <br>
+														 
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// when user only gives viewport and no tolerance</span><br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="jskeywordcolor">if</span> (args.length === 1 && isNaN(args[0])) { <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args[1] = args[0] <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args[0] = void 0 <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+														 
+														    &nbsp;&nbsp;&nbsp;&nbsp;<span class="jskeywordcolor">return</span> { <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tolerance: args[0] ? args[0].trim() : void 0, <br>
+														      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viewport: args[1] ? $(args[1].trim()) : void 0 <br>
+														    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+														  &nbsp;&nbsp;} <br>
+														  &nbsp;&nbsp;<span class="jskeywordcolor">return</span> {} <br>
+														} <br>
+													  </code>
+												  </div>
+												</div>
+											  </div>
+											</div>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Cómo duplicar un banner?">
+									    <div class="panel-heading" role="tab" id="bannersT12">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT12" aria-expanded="true" aria-controls="bannersCollapseT12">
+									          ¿Cómo duplicar un banner? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT12">
+									      	<div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT12P01">Intro</a></li>
+												  <li><a data-toggle="tab" href="#bannerT12P02" class="check-obligatorio">Paso 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT12P03" class="check-obligatorio">Paso 2</a></li>
+												</ul> 
+
+												<div class="tab-content">
+												  <div id="bannerT12P01" class="tab-pane fade in active">
+												    <h3>Intro</h3>
+												    <p>En el caso de que deseemos avanzar con un nuevo diseño de banner partiendo de uno ya existente pero sin perder lo que tenemos, vamos a poder utilizar la opción Duplicar del menú del banner. </p>
+												  </div>
+												  <div id="bannerT12P02" class="tab-pane fade">
+												    <h3>Paso 1</h3>
+												    <p>Al hacer clic en el icono de los tres puntitos se va a abrir un menú donde vamos a encontrar la opción <span class="spanBold">Duplicar</span>.</p>
+												    <img class="imgTutorial" src="img/bannersT12P02Img01.png">
+												  </div>
+												  <div id="bannerT12P03" class="tab-pane fade">
+												    <h3>Paso 2</h3>
+												    <p>Al seleccionar esta opción, se abrirá una nueva ventana donde se podrán indicar que tipo de duplicado deseamos generar:</p>
+												    <ul>
+												    	<li><span class="spanBold">Duplicar THIS VARIATION ONLY</span> (keep the same id)</li>
+												    	<li><span class="spanBold">Duplicar THIS VARIATION ONLY</span> (as a new id)</li>
+												    	<li><span class="spanBold">Duplicar ALL VARIATIONS for this ID</span> (as a new id)</li>
+												    </ul>
+												    <img class="imgTutorial" src="img/bannersT12P03Img01.png">
+												  </div>
+												  <div id="bannerT12P04" class="tab-pane fade">
+												    <h3>Paso 3</h3>
+												    <p>Una vez seleccionada la opción deseada, hacemos clic en Aceptar y listo. Tenemos nuestro duplicado listo para trabajar en él. </p>
+												  </div>
+												</div>
+									      	</div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="Mis productos se ven mal ¿Qué puede estar pasando?">
+									    <div class="panel-heading" role="tab" id="bannersT13">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT13" aria-expanded="true" aria-controls="bannersCollapseT13">
+									          Mis productos se ven mal ¿Qué puede estar pasando? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT13" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT13">
+									      	<div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT13P01">Intro</a></li>
+												  <li><a data-toggle="tab" href="#bannerT13P02">Paso 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT13P03">Paso 2</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT13P01" class="tab-pane fade in active">
+												    <h3>Intro</h3>
+												    <p>En algunas ocasiones se pueden ver los productos cortados ya sea por el header (la cabecera) o por el siguiente producto como los ejemplos a continuación: </p>
+												    <img class="imgTutorial smallImg" src="img/bannersT13P01Img01.png">
+												    <img class="imgTutorial smallImg" src="img/bannersT13P01Img02.png">
+												    <p>En este caso, lo que está sucediendo es que se configuró el banner de tal forma que el header está flotando sobre el contenido del banner lo que provoca que se calcule distinto el espacio para cada oferta o producto. Por esto, se puede ver como cortados los espacios. </p>
+												  </div>
+												  <div id="bannerT13P02" class="tab-pane fade">
+												    <h3>Paso 1</h3>
+												    <p><span class="spanBold">¿Cómo lo resolvemos?</span> Esto se resuelve modificando la configuración del header. </p>
+												    <img class="imgTutorial" src="img/bannersT13P02Img01.png">
+												    <p>Seguramente el header está configurado como Float ya sea top o bottom, al modificarlo con algunos de los restantes valores (top, bottom, right o left) el espacio de cada oferta se calculará correctamente. </p>
+												  </div>
+												  <div id="bannerT13P03" class="tab-pane fade">
+												    <h3>Paso 2</h3>
+												    <p>Dependiendo del valor con el que habíamos seteado anteriormente los elementos de la pieza tanto como imágenes, títulos, precios, etc, puede que tengamos que retocarlos para que se vean tal como deseamos.</p>
+												    <img class="imgTutorial" src="img/bannersT13P03Img01.gif">
+												  </div>
+												</div>
+									      	</div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="Mi banner se ve mal ¿Qué puede estar pasando?">
+									    <div class="panel-heading" role="tab" id="bannersT14">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT14" aria-expanded="true" aria-controls="bannersCollapseT14">
+									          Mi banner se ve mal ¿Qué puede estar pasando? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT14" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT14">
+									      <div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT14P01">Intro</a></li>
+												  <li><a data-toggle="tab" href="#bannerT14P02" class="check-obligatorio">Paso 1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT14P03">Paso 2.1</a></li>
+												  <li><a data-toggle="tab" href="#bannerT14P04">Paso 2.2</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT14P01" class="tab-pane fade in active">
+												    <h3>Intro</h3>
+												    <p>En algunas oportunidades el banner no se ve igual desde el preview entro de la edición del banner como desde el preview del panel o desde una presentación.</p> 
+												    <p>Adjuntamos un ejemplo:</p>
+												    <p>
+												    	1. Vista del banner desde el preview de edición del banner. <br>
+												    	2. Vista del banner desde una presentación.
+												    </p>
+												    <img class="imgTutorial smallImg" src="img/bannersT14P01Img01.png">
+												    <img class="imgTutorial smallImg" src="img/bannersT14P01Img02.png">
+												    <p>En este caso, lo que está sucediendo es que la paleta de colores no se asoció correctamente al banner. Esto se puede resolver de dos maneras: </p>
+												    <p>
+												    	<span class="spanBold">Opción 1:</span> Asociando la paleta desde la configuracion del banner. <br>
+												    	<span class="spanBold">Opción 2:</span> Vinculando la paleta al banner desde Banners > Global Operations.
+												    </p>
+												    <p><span class="icons">&#128161;</span>En caso de que veamos este error en mós de un banner, les recomendamos avanzar directamente con la Opción 2. De esta forma, va a poder vincular la paleta a todas las creatividades con un par de clics.</p>
+												  </div>
+												  <div id="bannerT14P02" class="tab-pane fade">
+												    <h3>Paso 1</h3>
+												    <p>Podemos intentar asociar la paleta <span class="spanBold">desde la edición del banner</span>. Lo primero sería cambiar la paleta por otra que no estemos usando y luego volver a seleccionar la correcta. </p>
+												    <img class="imgTutorial" src="img/bannersT14P02Img01.gif">
+												    <p>Si esto no funciona continuar con la <span class="spanBold">opción 2</span>.</p>
+												  </div>
+												  <div id="bannerT14P03" class="tab-pane fade">
+												    <h3>Paso 2.1</h3>
+												    <p>Desde <span class="spanBold">Banners > Global Operations</span> vamos a seleccionar el banner y a aplicarle la paleta correspondiente. </p>
+												    <img class="imgTutorial" src="img/bannersT14P03Img01.gif">
+												  </div>
+												  <div id="bannerT14P04" class="tab-pane fade">
+												    <h3>Paso 2.2</h3>
+												    <p>Una vez realizado el cambio podemos verificar si impacto correctamente ingresando al preview desde el icono de la lupa. </p>
+												    <img class="imgTutorial" src="img/bannersT14P04Img01.png">
+												    <p>&#128064; En el caso de que el banner se siga viendo incorrectamente, comunicarse con el equipo de Groovin. </p>
+												  </div>
+												</div>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="¿Qué información necesitamos al crear un nuevo banner?">
+									    <div class="panel-heading" role="tab" id="bannersT11">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT11" aria-expanded="true" aria-controls="bannersCollapseT11">
+									          ¿Qué información necesitamos al crear un nuevo banner? 
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT11">
+									      <div class="panel-body">
+												<p>Al crear un nuevo banner, el panel nos pide algunas especificaciones, en este tutorial vamos a entender un poco más de que se trata cada una.</p>
+												<img class="imgTutorial" src="img/bannersT11Img01.png">
+												<p>Los datos obligatorios son: </p>
+												<ul>
+													<li>Nombre</li>
+													<li>Formato</li>
+													<li>Base de datos</li>
+													<li>Country</li>
+													<li>Red</li>
+													<li>Medio</li>
+												</ul>
+												<p>Veamos con un poco más de detalle cada valor:</p> 
+												<p>
+													<span class="spanBold">Banner Name:</span> Desde este campo vamos a definir el nombre del banner. <br>
+													<span class="spanBold">Banner Description:</span> En el caso de que deseemos que el banner tenga alguna descripción, este es el campo que podemos utilizar para ello. <br>
+													<span class="spanBold">Variation Name:</span> En este caso, vamos a poder configurar el nombre de la variación creada. <br>
+													<span class="spanBold">Format (Size):</span> Desde esta opción vamos a poder seleccionar las medidas que deseamos que tenga nuestro nuevo banner. <br>
+													<span class="icons">&#128064;</span><span class="spanBold">Atención:</span> Tener en cuenta que una vez que el banner se creó no se puede modificar este valor. <br>
+													<span class="spanBold">Business Model:</span> Desde Business Model vamos a poder seleccionar cuál es el Modelo de Negocio que corresponda al sitio. Esto permitirá: una mejor optimización de anuncios, establecer los criterios de segmentación, y obtener mejores resultados para la campaña.<br>
+													<span class="icons">&#128204;</span>Tutorial relacionado: <span class="spanBold"><a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT15" aria-expanded="false" aria-controls="bannersCollapseT15">Todo sobre el Modelo de Negocio o Business Model</a></span><br>
+													<span class="spanBold">DataSource:</span> En esta opción vamos a seleccionar cuál es el feed que queremos utilizar en este banner en particular. <br>
+													<span class="icons">&#128204;</span>Tutorial relacionado: <span class="spanBold">Todo sobre el DataSource</span><br>
+												</p>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="Todo sobre el Modelo de Negocio o Business Model">
+									    <div class="panel-heading" role="tab" id="bannersT15">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT15" aria-expanded="true" aria-controls="bannersCollapseT15">
+									          Todo sobre el Modelo de Negocio o Business Model
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT15" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT15">
+									      <div class="panel-body">
+												<p>Los diferentes modelos de negocio (MN) presentarán diferentes campos que se ajustan mejor a ese MN. Esto no sólo ayuda en la optimización de la información que se mostrará en el anuncio, sino también en la definición de los mejores criterios de segmentación para la campaña, teniendo en cuenta Segmentación Contextual, Behavioral o segmentación por comportamiento, Segmentación Dinámica, Análisis de Conversión, Re-targeting y más.</p>
+
+												<p>Si al momento de seleccionar una opción tiene alguna duda le recomendamos elegir General, o contactarse con el soporte de GroovinAds.</p>
+
+												<p>Las opciones disponibles de MN son:</p>
+												<ul>
+													<li><span class="spanBold">Automotores:</span> Para anuncios referentes a negocios involucrados con la venta o alquiler en el sector automotriz.</li>
+													<li><span class="spanBold">Libros:</span> Para anuncios referentes a negocios en la venta de libros.</li>
+													<li><span class="spanBold">B2B:</span> Para anuncios referentes a negocios entre empresas.</li>
+													<li><span class="spanBold">Clasificados:</span> Para anuncios referentes a negocios en la industria de publicitaria de anuncios clasificados online.</li>
+													<li><span class="spanBold">Cupones de Descuento:</span> Para anuncios referentes a negocios en la industria publicitaria de ofertas online.</li>
+													<li><span class="spanBold">Educación:</span> Para anuncios referentes a negocios en la industria de la educación.</li>
+													<li><span class="spanBold">Vuelos:</span> Para anuncios referentes a pasajes aéreos.</li>
+													<li><span class="spanBold">Alimentación y Reservas:</span> Para anuncios referentes a negocios en la industria alimenticia (entregas a domicilio, reservas en restaurantes, etc.).</li>
+													<li><span class="spanBold">General:</span> Formato general que se adapta a la mayoría de los negocios.</li>
+													<li><span class="spanBold">Hoteles:</span> Para anuncios referentes a hospedaje.</li>
+													<li><span class="spanBold">Empleos:</span> Para anuncios referentes a ofertas laborales y reclutamiento de personal.</li>
+													<li><span class="spanBold">Apps Móviles:</span> Para anuncios referentes a negocios con descargas de aplicaciones para móviles.</li>
+													<li><span class="spanBold">Náutico:</span> Para anuncios referentes a negocios involucrados con la venta o alquiler en el segmento náutico.</li>
+													<li><span class="spanBold">Bienes Raíces:</span> Para anuncios referentes a negocios involucrados con la venta o alquiler en el segmento inmobiliario.</li>
+													<li><span class="spanBold">Venta al por menor:</span> Para anuncios referentes a negocios involucrados con la venta al por menor.</li>
+													<li><span class="spanBold">Transporte:</span> Para anuncios referentes a transporte terrestre de pasajeros.</li>
+												</ul>
+									      </div>
+									    </div>
+									</div>
+									<div class="panel panel-default" title="Panel Banner > Global Operations">
+									    <div class="panel-heading" role="tab" id="bannersT16" title="Panel Banner > Global Operations">
+									      <h4 class="panel-title">
+									        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#bannersCollapseT16" aria-expanded="true" aria-controls="bannersCollapseT16">
+									          Panel Banner > Global Operations
+									        </a>
+									      </h4>
+									    </div>
+									    <div id="bannersCollapseT16" class="panel-collapse collapse" role="tabpanel" aria-labelledby="bannersT16">
+									      <div class="panel-body">
+												<ul class="nav nav-tabs">
+												  <li class="active"><a data-toggle="tab" href="#bannerT16P01">Intro</a></li>
+												  <li><a data-toggle="tab" href="#bannerT16P02">Ejemplo</a></li>
+												</ul>
+
+												<div class="tab-content">
+												  <div id="bannerT16P01" class="tab-pane fade in active">
+												    <h3>Intro</h3>
+												    <p>Desde el panel de <span class="spanBold">Global Operations</span> vamos a poder actualizar, cambiar o sumar diversos datos de los banners y, en consecuencia, de las campañas. </p>
+												    <p>Desde este panel vamos a ver todos los banners creados en nuestra cuenta incluidos los que están corriendo en campañas activas y los que corrieron y se encuentran inactivos actualmente. Por esto, es necesario estar seguro de los cambios que vamos a realizar. </p>
+													<p>
+														<span class="spanBold">Apply Templete:</span> Nos permite cambiar de modelo de templete o plantilla aplicado al banner seleccionado.<br>
+														<span class="spanBold">Refresh Templete:</span> Si realizamos algún cambio en el diseño de ejemplo del templete, nos permite replicar el cambio en los banners que se encuentran activos en una campaña. <br>
+														<span class="spanBold">Apply Palette:</span> Nos permite refrescar los cambios o adjudicar una nueva paleta a los banners seleccionados. <br>
+														<span class="spanBold">Apply Logo:</span> Nos permite asociar un nuevo logo. <br>
+														<span class="icons">&#128064;</span><span class="spanBold">Atención:</span> Tener en cuenta que si la nueva imagen no posee las mismas dimensiones del logo anterior puede que la pieza no se vea correctamente. <br>
+														<span class="spanBold">Apply Background:</span> Nos permite asociar un nuevo fondo o cambiar a uno diferente del actual. <br>
+														<span class="spanBold">Apply Atributes:</span> Desde esta opción vamos a poder editar la información relativa al banner. Los datos que vamos a poder agregar o editar son: <br>
+														<ul>
+															<li>Variation Name</li>
+															<li>Business Model</li>
+															<li>DataSource</li>
+															<li>Default Country</li>
+															<li>Network</li>
+															<li>Medium </li>
+															<li>Analytics</li>
+														</ul>
+														Si bien también figura el campo Format (Size) este no se puede modificar o alterar. <br>
+														<span class="spanBold">Apply URL settings:</span> Desde esta sección podemos agregar o modificar la URL del Click Tracker y la URL del Impression Pixel.<br>
+														<span class="spanBold">Clear UTM:</span> Esta opción, nos p[permite eliminar la UTM asociada al banner seleccionado. <br>
+													</p>
+												  </div>
+												  <div id="bannerT16P02" class="tab-pane fade">
+												    <h3>Ejemplo</h3>
+												    <p>Ejemplo de como seleccionar un banner y adjudicarle una nueva paleta de colores: </p>
+												    <img class="imgTutorial" src="img/bannersT16P02Img01.gif">
+												  </div>
+												</div>
+									      </div>
+									    </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script>
+			$(document).ready(function(){
+			  $('[data-toggle="tooltip"]').tooltip();
+			});
+
+			var obligatorio = document.getElementsByClassName("check-obligatorio");
+
+			for (var i=0; i< obligatorio.length; i++){
+				const span = document.createElement("span");
+
+			    span.setAttribute("data-toggle","tooltip");
+			    span.setAttribute("data-placement","right");
+			    span.setAttribute("title", "Paso obligatorio");
+			    span.className = "spanBoldRed";
+			    span.textContent = " *";
+
+			    obligatorio[i].insertAdjacentElement("beforeend",span);
+			}
+
+			function copiarAlPortapapeles(idelemento) {
+			  var aux = document.createElement("div");
+			  aux.setAttribute("contentEditable", true);
+			  aux.innerHTML = document.getElementById(idelemento).innerHTML;
+			  aux.setAttribute("onfocus", "document.execCommand('selectAll',false,null)"); 
+			  document.body.appendChild(aux);
+			  aux.focus();
+			  document.execCommand("copy");
+			  document.body.removeChild(aux);
+			}
+
+		</script>
+	</body>
+
+
+
+
